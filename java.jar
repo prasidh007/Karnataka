@@ -1,24 +1,21 @@
-ipublic class SwapNumbers {
+public class Armstrong {
 
     public static void main(String[] args) {
 
-        float first = 1.20f, second = 2.45f;
+        int number = 371, originalNumber, remainder, result = 0;
 
-        System.out.println("--Before swap--");
-        System.out.println("First number = " + first);
-        System.out.println("Second number = " + second);
+        originalNumber = number;
 
-        // Value of first is assigned to temporary
-        float temporary = first;
+        while (originalNumber != 0)
+        {
+            remainder = originalNumber % 10;
+            result += Math.pow(remainder, 3);
+            originalNumber /= 10;
+        }
 
-        // Value of second is assigned to first
-        first = second;
-
-        // Value of temporary (which contains the initial value of first) is assigned to second
-        second = temporary;
-
-        System.out.println("--After swap--");
-        System.out.println("First number = " + first);
-        System.out.println("Second number = " + second);
+        if(result == number)
+            System.out.println(number + " is an Armstrong number.");
+        else
+            System.out.println(number + " is not an Armstrong number.");
     }
-}
+}		
